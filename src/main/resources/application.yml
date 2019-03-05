@@ -1,0 +1,31 @@
+server:
+  port: 9100
+
+#指定注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+#服务的名称
+spring:
+  application:
+    name: config-server
+  #git配置
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/huangzezhong/springcloud-config
+          username: huangzezhong111@sina.com
+          password: 103511huangzz
+          #超时时间
+          timeout: 5
+            #git分支
+          default-label: master
+  #rabbitmq配置
+  rabbitmq:
+    host: 192.168.107.30
+    port: 5672
+    username: guest
+    password: guest
